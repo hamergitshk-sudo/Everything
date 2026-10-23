@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#170b1b">
+  <title>Everything❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+  <div class="petals" id="petals"></div>
+  <div class="confetti" id="confetti"></div>
+
+  <header class="topbar">
+    <div class="logo">L<span>♡</span>K</div>
+    <div class="chapter-label" id="chapter-label">A LITTLE SURPRISE</div>
+    <button class="sound-btn" id="music-btn" aria-label="Play or pause music">♫</button>
+  </header>
+
+  <main id="story">
+
+    <!-- 01: SECRET ENVELOPE -->
+    <section class="scene active" data-title="A secret for you">
+      <div class="scene-inner intro">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="envelope-wrap" id="envelope">
+          <div class="envelope-back"></div>
+          <div class="letter-peek">FOR MADAM JI 💌</div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-front"></div>
+          <div class="wax">M</div>
+        </div>
+        <p class="overline">CONFIDENTIAL · ONLY FOR YOU</p>
+        <h1>Oye, <em>Madam Ji.</em></h1>
+        <p class="subtitle">Aaj aapko ek bahut zaroori kaam karna hai.</p>
+        <p class="tiny">Areee, bartan nahi dhone. 😂</p>
+        <button class="pill-btn pink" id="open-letter">Open your letter <span>↗</span></button>
+        <div id="letter-reveal" class="reveal-box hidden">
+          <p>Mission: Aaj ke din sirf smile karna, cake khaana aur apne aap ko special feel karna. Baaki sab kal. ❤️</p>
+          <button class="pill-btn" data-next>Mission accepted ✨</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02: FUNNY VERIFICATION -->
+    <section class="scene" data-title="Madam Ji verification">
+      <div class="scene-inner">
+        <div class="scene-number">01 / THE VERIFICATION</div>
+        <div class="character">👑</div>
+        <h2>Identity confirm karein.</h2>
+        <p>Are you the one and only, legendary...</p>
+        <h2 class="pink-text">Pasandida Aurat?</h2>
+        <div class="button-stack">
+          <button class="choice" data-verify="yes">Haan ji, main hi hoon 😌</button>
+          <button class="choice" data-verify="no">Nahi, main unki lawyer hoon ⚖️</button>
+        </div>
+        <p id="verify-result" class="reaction"></p>
+        <button class="pill-btn hidden" id="verify-next" data-next>Chalo, aage badhein →</button>
+      </div>
+    </section>
+
+    <!-- 03: COUNTDOWN / LIGHTS -->
+    <section class="scene" data-title="The big moment">
+      <div class="scene-inner">
+        <div class="scene-number">02 / THE BIG MOMENT</div>
+        <div class="dark-room" id="dark-room">
+          <div class="fairy-lights"></div>
+          <div class="light-heart">♥</div>
+          <div class="room-message">A little world<br>made for you.</div>
+        </div>
+        <h2 id="lights-title">Lights off. Surprise ready.</h2>
+        <p id="lights-copy">Madam Ji, countdown ke liye taiyaar?</p>
+        <button class="pill-btn pink" id="lights-btn">3... 2... 1... ✨</button>
+        <button class="pill-btn hidden" id="lights-next" data-next>Show me the cake 🎂</button>
+      </div>
+    </section>
+
+    <!-- 04: INTERACTIVE CAKE -->
+    <section class="scene cake-scene" data-title="The birthday cake">
+      <div class="scene-inner">
+        <div class="scene-number">03 / THE MAIN EVENT</div>
+        <p class="overline">MADE WITH EXTRA LOVE</p>
+        <h2>Aapka birthday cake, <em>Madam Ji.</em></h2>
+        <p class="subtitle">Pehle wish maangiye. Phir candles bujhaiye.</p>
+
+        <div class="cake-stage" id="cake-stage">
+          <div class="cake-sparkles">✦　·　✧　·　✦</div>
+          <div class="cake">
+            <div class="candles" id="candles">
+              <button class="candle" aria-label="Blow out candle one"><span class="flame"></span><span class="wick"></span></button>
+              <button class="candle" aria-label="Blow out candle two"><span class="flame"></span><span class="wick"></span></button>
+              <button class="candle" aria-label="Blow out candle three"><span class="flame"></span><span class="wick"></span></button>
+              <button class="candle" aria-label="Blow out candle four"><span class="flame"></span><span class="wick"></span></button>
+              <button class="candle" aria-label="Blow out candle five"><span class="flame"></span><span class="wick"></span></button>
+            </div>
+            <div class="icing"><span>♡</span><span>♡</span><span>♡</span></div>
+            <div class="cake-layer layer-top"></div>
+            <div class="cream-band"></div>
+            <div class="cake-layer layer-bottom"></div>
+            <div class="cake-board"></div>
+            <div class="cake-knife" id="cake-knife" aria-hidden="true">🔪</div>
+            <div class="cake-slice" id="cake-slice"></div>
+          </div>
+        </div>
+
+        <p id="cake-status" class="reaction">Har candle ek chhoti si wish ke liye. 🕯️</p>
+        <div class="cake-actions">
+          <button class="pill-btn pink" id="blow-btn">Blow the candles ✨</button>
+          <button class="pill-btn hidden" id="cut-btn">Cut the cake 🍰</button>
+        </div>
+        <div id="cake-celebration" class="reveal-box hidden">
+          <div class="big-emoji">🎉🎂💗</div>
+          <h3>HAPPY BIRTHDAY, MADAM JI!</h3>
+          <p>May god bless youuu my cutie..💗</p>
+          <button class="pill-btn" data-next>Ab party shuru karein →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05: CAKE GAME -->
+    <section class="scene" data-title="Cake duty">
+      <div class="scene-inner">
+        <div class="scene-number">04 / CAKE DUTY</div>
+        <div class="character">🍰</div>
+        <h2>Ek chhoti si duty hai.</h2>
+        <p>Screen par aane wale cake pieces collect karo. Madam Ji ko bhookha nahi rehne denge.</p>
+        <div class="cake-game" id="cake-game">
+          <button class="cake-bite" data-bite>🍰</button>
+          <button class="cake-bite" data-bite>🧁</button>
+          <button class="cake-bite" data-bite>🍓</button>
+          <button class="cake-bite" data-bite>🍰</button>
+          <button class="cake-bite" data-bite>🧁</button>
+        </div>
+        <p id="bite-score" class="reaction">Collected: 0 / 5</p>
+        <button class="pill-btn hidden" id="bite-next" data-next>Pet bhar gaya? 😂 →</button>
+      </div>
+    </section>
+
+    <!-- 06: NAKHRE DETECTOR -->
+    <section class="scene" data-title="Nakhre detector">
+      <div class="scene-inner">
+        <div class="scene-number">05 / SCIENTIFIC RESEARCH</div>
+        <div class="character">🔬</div>
+        <h2>Madam Ji Nakhre Detector™</h2>
+        <p>Ek highly scientific sawaal. Galat answer dene par koi guarantee nahi. 😂</p>
+        <h3 id="nakhra-question">“Kuch nahi hua” ka matlab?</h3>
+        <div class="button-stack" id="nakhra-options">
+          <button class="choice" data-nakhra="wrong">Sach mein kuch nahi hua.</button>
+          <button class="choice" data-nakhra="right"> Bahut kuch hua hai but ab khud samjho, ji. 😌</button>
+          <button class="choice" data-nakhra="wrong">Wi-Fi band ho gaya.</button>
+        </div>
+        <p id="nakhra-result" class="reaction"></p>
+        <button class="pill-btn hidden" id="nakhra-next" data-next>Report accepted →</button>
+      </div>
+    </section>
+
+    <!-- 07: CATCH THE HEART -->
+    <section class="scene" data-title="Catch my heart">
+      <div class="scene-inner">
+        <div class="scene-number">06 / A LITTLE GAME</div>
+        <h2>Catch the hearts. 💗</h2>
+        <p>10 seconds mein jitne hearts pakad sako. Ready, Madam Ji?</p>
+        <div class="heart-arena" id="heart-arena">
+          <span class="arena-hint">Tap START to play</span>
+        </div>
+        <div class="game-stats"><span id="heart-count">Hearts: 0</span><span id="heart-time">Time: 10</span></div>
+        <button class="pill-btn pink" id="heart-start">Start game!</button>
+        <p id="heart-result" class="reaction"></p>
+        <button class="pill-btn hidden" id="heart-next" data-next>Next surprise →</button>
+      </div>
+    </section>
+
+    <!-- 08: ROMANTIC UNIVERSE -->
+    <section class="scene universe-scene" data-title="Our little universe">
+      <div class="scene-inner">
+        <div class="scene-number">07 / OUR LITTLE UNIVERSE</div>
+        <div class="universe">
+          <div class="planet planet-one"></div><div class="planet planet-two"></div>
+          <div class="universe-heart">♥</div>
+          <span class="constellation c1">✦</span><span class="constellation c2">✧</span><span class="constellation c3">✦</span>
+        </div>
+        <p class="overline">IN A UNIVERSE FULL OF STARS</p>
+        <h2>My favourite is still <em>you.</em></h2>
+        <p class="subtitle">Har kisi ki duniya mein koi ek insaan hota hai jo ordinary palon ko bhi special bana deta hai.</p>
+        <button class="pill-btn" data-next>Ek aur baat bataun? 💌</button>
+      </div>
+    </section>
+
+    <!-- 09: DATE ADVENTURE -->
+    <section class="scene" data-title="Choose your date">
+      <div class="scene-inner">
+        <div class="scene-number">08 / THE DREAM DATE</div>
+        <div class="character">🌹</div>
+        <h2>Madam Ji ki dream date?</h2>
+        <p>Aaj ki imaginary date ka plan choose kijiye.</p>
+        <div class="date-grid">
+          <button class="date-card" data-date="moon"><span>🌙</span><b>Moonlight</b><small>Stars, music, long talks</small></button>
+          <button class="date-card" data-date="cafe"><span>☕</span><b>Cute café</b><small>Coffee, cake, teasing</small></button>
+          <button class="date-card" data-date="adventure"><span>🎡</span><b>Adventure</b><small>Games, rides, laughter</small></button>
+        </div>
+        <div class="reveal-box hidden" id="date-result"></div>
+        <button class="pill-btn hidden" id="date-next" data-next>Plan approved →</button>
+      </div>
+    </section>
+
+    <!-- 10: LOVE METER -->
+    <section class="scene" data-title="The love meter">
+      <div class="scene-inner">
+        <div class="scene-number">09 / VERY SERIOUS SCIENCE</div>
+        <div class="character">💘</div>
+        <h2>Madam Ji's smile meter</h2>
+        <p>Slider move karo aur dekho birthday mood kitna high hai.</p>
+        <div class="meter-display" id="meter-display">100%</div>
+        <input id="love-slider" type="range" min="0" max="100" value="100" aria-label="Birthday happiness meter">
+        <div class="meter-labels"><span>Thoda nakhra</span><span>Full queen mode</span></div>
+        <p id="meter-result" class="reaction">Warning: excessive cuteness detected. 💗</p>
+        <button class="pill-btn" data-next>Scientific results accepted 😂</button>
+      </div>
+    </section>
+
+    <!-- 11: TREASURE HUNT -->
+    <section class="scene" data-title="Secret treasure">
+      <div class="scene-inner">
+        <div class="scene-number">10 / THE TREASURE HUNT</div>
+        <div class="treasure" id="treasure">🔒</div>
+        <h2>Ek secret treasure locked hai.</h2>
+        <p>Clue: Aaj ki queen ka title kya hai?</p>
+        <input id="treasure-input" class="text-input" placeholder="Enter secret password" autocomplete="off">
+        <button class="pill-btn pink" id="treasure-unlock">Unlock treasure</button>
+        <div id="treasure-result" class="reveal-box hidden">
+          <div class="big-emoji">💎</div><h3>Treasure unlocked!</h3>
+          <p>Pata hai, kaash tum ek baar khud ko meri nazron se dekh paati. Tumhe samajh aata ki tum sirf ek insaan nahi ho meri zindagi mein, balki woh khoobsurat ehsaas ho jise main lafzon mein kabhi poori tarah bayaan hi nahi kar sakta.
+Main nahi jaanta ki zindagi humein kitne khoobsurat pal degi, lekin main itna zaroor jaanta hoon ki un palon mein tumhara saath hona mere liye bahut maayne rakhega. Main chahta hoon ki tum jab bhi apni zindagi ke baare mein socho, tumhare paas aisi yaadein hon jo tumhare chehre par sukoon le aayein.
+Aur agar kabhi tumhe lage ki tum mein koi kami hai, toh bas ek baar meri nazron se khud ko dekh lena… kyunki meri nazron mein tumhe khaas banne ke liye kuch bhi alag hone ki zaroorat nahi hai. Tum jaisi ho, waise hi mere liye bahut pyaari ho. 🫂❤️❤️</p>
+        </div>
+        <button class="pill-btn hidden" id="treasure-next" data-next>Continue the story →</button>
+      </div>
+    </section>
+
+    <!-- 12: COMPLIMENTS -->
+    <section class="scene" data-title="Open when you need a smile">
+      <div class="scene-inner">
+        <div class="scene-number">11 / A LITTLE REMINDER</div>
+        <h2>Open a little compliment. 💌</h2>
+        <p>Har envelope mein ek chhoti si reminder hai.</p>
+        <div class="compliment-grid">
+          <button class="compliment" data-compliment="You will always be my favourite person..🌷">Open me 01</button>
+          <button class="compliment" data-compliment="In every version of my future, I hope you are there..✨">Open me 02</button>
+          <button class="compliment" data-compliment="I wish i could collect every tear you've ever cried, every pain you've ever hidden, and replace them with the happiness you deserve..👑">Open me 03</button>
+        </div>
+        <div id="compliment-result" class="reveal-box">Choose an envelope, Madam Ji.</div>
+        <button class="pill-btn" data-next>Ek dreamy moment aur →</button>
+      </div>
+    </section>
+
+    <!-- 13: MUSIC -->
+    <section class="scene music-scene" data-title="A dreamy moment">
+      <div class="scene-inner">
+        <div class="scene-number">12 / PRESS PLAY, SLOW DOWN</div>
+        <div class="vinyl" id="vinyl"><div class="vinyl-label">♫</div></div>
+        <p class="overline">A SONG FOR THE MOMENT</p>
+        <h2>Hum, aur ek khoobsurat raat.</h2>
+        <p class="subtitle">Agar tumhare paas song ki audio file hai, use select karke play karo. Phir is moment ko enjoy karo. 🌙</p>
+        <label class="file-label" for="song-file">Choose your audio file ♫</label>
+        <input type="file" id="song-file" accept="audio/*">
+        <audio id="song-audio" loop></audio>
+        <button class="pill-btn pink" id="song-toggle" disabled>Play music</button>
+        <p class="tiny">Audio file tumhare device se load hogi.</p>
+        <button class="pill-btn" data-next>Ab last gifts ki baari 💝</button>
+      </div>
+    </section>
+
+    <!-- 14: GIFT BOX -->
+    <section class="scene" data-title="A gift from the heart">
+      <div class="scene-inner">
+        <div class="scene-number">13 / ONE LAST GIFT</div>
+        <h2>Madam Ji, this one's yours.</h2>
+        <div class="gift-scene">
+          <button class="gift-box" id="gift-open" aria-label="Open birthday gift">
+            <span class="gift-lid"></span><span class="gift-body"></span><span class="gift-ribbon"></span><span class="gift-bow">🎀</span>
+          </button>
+        </div>
+        <p id="gift-hint">Box par tap kijiye. Andar kuch pyaara hai.</p>
+        <div id="gift-message" class="reveal-box hidden">
+          <div class="big-emoji">💗</div>
+          <h3>A small gift, Sirf aapke liye.</h3>
+          <p>Arz kiya hai...</p>
+          <p>Jab bhi tere baare mein kitab likhunga..</p>
+        <p>main tere hothon ko gulab likhunga..</p>
+        <p>teri aankhon ko sharab likhunga.. </p>
+        <p>likhunga tujhe rani pariyon ki,</p>
+        <p>or fir khud ko nawaab likhunga..</p>
+        <p>saleeka sikhaya jayega mohabbat ko jab kahin..</p>
+        <p>tere har andaj ko aadab likhunga..</p>
+            <p>hoga sawaal jennat ka jab kahin..</p>
+            <p>main teri baahon ko javaab likhunga.. </p>
+            <p>jab bhi tere baare mein kitab likhunga..🎀🎀</p>
+            <h3>Ek or hai..</h3>
+            <p>ki teri aankhon k saamne..</p>
+            <p>ye sahar kon dekhega..??</p>
+            <p>tu dariya si hai..</p>
+            <p>ye lahar kon dekhega..</p>
+            <p>tu khubshurat se bhi khubshurat hai..</p>
+            <p>tere baad taajmahal kon dekhega..??</p>
+            <h3>chalo fir ek or sun lo..</h3>
+            <p>Aasmaan se todkar ek sitara diya hai..</p>
+            <p>meri tanhai ko ek sahara diya hai..</p>
+            <p>meri kismat bhi naaz krti hogi mujh par..</p>
+            <p>uparwale ne pyar hi itna pyara diya hai..🥹</p>
+            <h3>kuch khas sirf tere liye..♥</h3>
+            <p>charche nashe ke chal rahe the..</p>
+            <p>main jikr teri nigahon ka kar aayaa..</p>
+            <p>or baat jab sukoon ki chhidi..</p>
+            <P>main jikr teri baahon ka kar aaya..🌙🌹</P>
+        </div>
+        <button class="pill-btn hidden" id="gift-next" data-next>Read your letter 💌</button>
+      </div>
+    </section>
+
+    <!-- 15: LOVE LETTER -->
+    <section class="scene" data-title="A letter from me">
+      <div class="scene-inner">
+        <div class="scene-number">14 / Dil ki Baat</div>
+        <div class="letter-paper">
+          <div class="letter-stamp">♡</div>
+          <p class="letter-to">Dear Madam Ji,</p>
+          <p>Happiest Birthday My Everything..💗💗</p>
+          <P>Mahadev aapko hmesha khush rakhe or aapko jo bhi chahiye vo sab mile..💝</p>
+          <p>"if time could keep one day untouched foreever, i'd choose the day you came into this world"...💌</p>
+          <p>Aaj ka din mere liye bhut bhut pyara din h kyunki aaj k din jo dhamaka hua vo main aaj bhi jhel rha hu, are mtlb itta pyara insan mila mereko ki ab koi or pyara hi nhi lag rha hai..❤️</p>
+          <p>Bas ita hi maanguga aapse hmesha haste rehna badi pyari lagti ho sajjni ji..❤️</p>
+          <p>"I think aapko ye chhota sa gift acha laga hoga agar sach me acha laga hai to piche ki meri sari glti bhul kar mujhe maaf kardo..🥹🎀</p>
+         <p>Okay mam always be happy, Loveeee youuuuu bhut bhut saraa..🥹</p>
+          <p class="letter-sign">With lots of love,<br>Tumhare Shab✨</p>
+        </div>
+        <button class="pill-btn pink" data-next>One final thing... 🥹</button>
+      </div>
+    </section>
+
+    <!-- 16: GRAND FINALE -->
+    <section class="scene finale-scene" data-title="Happy Birthday, Madam Ji">
+      <div class="scene-inner">
+        <div class="final-crown">👑</div>
+        <p class="overline">THE MAIN CHARACTER OF TODAY</p>
+        <h1>Happy Birthday,<br><em>Madam Ji.</em></h1>
+        <div class="final-heart">♥</div>
+        <p class="subtitle">May your world be as beautiful as the happiness you bring to the people around you.</p>
+        <button class="pill-btn pink" id="final-button">Make it rain hearts! 💗</button>
+        <p id="final-message" class="reaction"></p>
+        <button class="pill-btn" id="replay">Relive the surprise ↻</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="navigation">
+    <button id="back" class="nav-btn" disabled>← Back</button>
+    <div class="progress-track"><div id="progress"></div></div>
+    <button id="forward" class="nav-btn">Next →</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
